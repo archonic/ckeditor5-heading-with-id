@@ -77,7 +77,7 @@ export default class HeadingEditing extends Plugin {
 			}
 		}
 
-		editor.conversion.attributeToAttribute( { model: 'id', view: 'id' } );
+    editor.conversion.attributeToAttribute( { model: 'id', view: 'id' } );
 
 		this._addDefaultH1Conversion( editor );
 
