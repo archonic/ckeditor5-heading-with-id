@@ -67,7 +67,8 @@ export default class HeadingEditing extends Plugin {
 			if ( option.model !== defaultModelElement ) {
 				// Schema.
 				editor.model.schema.register( option.model, {
-					inheritAllFrom: '$block'
+					inheritAllFrom: '$block',
+					allowAttributes: [ 'id' ]
 				} );
 
 				editor.conversion.elementToElement( option );
@@ -75,6 +76,8 @@ export default class HeadingEditing extends Plugin {
 				modelElements.push( option.model );
 			}
 		}
+
+		editor.conversion.attributeToAttribute( { model: 'id', view: 'id' } );
 
 		this._addDefaultH1Conversion( editor );
 
@@ -99,6 +102,7 @@ export default class HeadingEditing extends Plugin {
 
 				if ( isHeading && !positionParent.is( defaultModelElement ) && positionParent.childCount === 0 ) {
 					data.writer.rename( positionParent, defaultModelElement );
+					data.writer.removeAttribute( 'id', positionParent);
 				}
 			} );
 		}

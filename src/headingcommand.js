@@ -69,6 +69,9 @@ export default class HeadingCommand extends Command {
 
 		const modelElement = options.value;
 
+		const acceptableElements = Array("heading1", "heading2", "heading3", "heading4", "heading5", "heading6");
+		const isHeading = (acceptableElements.indexOf(modelElement) != -1);
+
 		model.change( writer => {
 			const blocks = Array.from( document.selection.getSelectedBlocks() )
 				.filter( block => {
@@ -78,10 +81,21 @@ export default class HeadingCommand extends Command {
 			for ( const block of blocks ) {
 				if ( !block.is( modelElement ) ) {
 					writer.rename( block, modelElement );
+
+					// Write the ID if it doesn't already have one
+          // It may already have one if it was previously a header and we're now making it a header again
+          if (isHeading && block.getAttribute( 'id' ) == undefined ) {
+            writer.setAttribute( 'id', generateToken(), block);
+          }
 				}
 			}
 		} );
 	}
+}
+
+function generateToken() {
+  const crypto = require('crypto');
+  return 's' + crypto.randomBytes(3).toString('hex');
 }
 
 // Checks whether the given block can be replaced by a specific heading.
