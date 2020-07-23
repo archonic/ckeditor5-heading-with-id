@@ -68,7 +68,7 @@ export default class HeadingEditing extends Plugin {
 				// Schema.
 				editor.model.schema.register( option.model, {
 					inheritAllFrom: '$block',
-					allowAttributes: [ 'id' ]
+          allowAttributes: [ 'id' ]
 				} );
 
 				editor.conversion.elementToElement( option );
@@ -98,11 +98,11 @@ export default class HeadingEditing extends Plugin {
 		if ( enterCommand ) {
 			this.listenTo( enterCommand, 'afterExecute', ( evt, data ) => {
 				const positionParent = editor.model.document.selection.getFirstPosition().parent;
-				const isHeading = options.some( option => positionParent.is( option.model ) );
+				const isHeading = options.some( option => positionParent.is( 'element', option.model ) );
 
-				if ( isHeading && !positionParent.is( defaultModelElement ) && positionParent.childCount === 0 ) {
+				if ( isHeading && !positionParent.is( 'element', defaultModelElement ) && positionParent.childCount === 0 ) {
 					data.writer.rename( positionParent, defaultModelElement );
-					data.writer.removeAttribute( 'id', positionParent);
+          data.writer.removeAttribute( 'id', positionParent);
 				}
 			} );
 		}

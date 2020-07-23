@@ -1,6 +1,33 @@
 Changelog
 =========
 
+All changes in the package are documented in the main repository. See: https://github.com/ckeditor/ckeditor5/blob/master/CHANGELOG.md.
+
+Changes for the past releases are available below.
+
+## [19.0.0](https://github.com/ckeditor/ckeditor5-heading/compare/v18.0.0...v19.0.0) (2020-04-29)
+
+Internal changes only (updated dependencies, documentation, etc.).
+
+
+## [18.0.0](https://github.com/ckeditor/ckeditor5-heading/compare/v17.0.0...v18.0.0) (2020-03-19)
+
+### Other changes
+
+* Updated translations. ([99855b5](https://github.com/ckeditor/ckeditor5-heading/commit/99855b5))
+
+
+## [17.0.0](https://github.com/ckeditor/ckeditor5-heading/compare/v16.0.0...v17.0.0) (2020-02-19)
+
+### Bug fixes
+
+* Focus the editor before executing toolbar buttons' command. See [ckeditor/ckeditor5#353](https://github.com/ckeditor/ckeditor5/issues/353). ([2495b81](https://github.com/ckeditor/ckeditor5-heading/commit/2495b81))
+
+### Other changes
+
+* Updated translations. ([f947574](https://github.com/ckeditor/ckeditor5-heading/commit/f947574))
+
+
 ## [16.0.0](https://github.com/ckeditor/ckeditor5-heading/compare/v15.0.0...v16.0.0) (2019-12-04)
 
 ### Other changes

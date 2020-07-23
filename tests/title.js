@@ -300,6 +300,7 @@ describe( 'Title', () => {
 
 			editor.editing.view.document.fire( 'paste', {
 				dataTransfer: dataTransferMock,
+				stopPropagation() {},
 				preventDefault() {}
 			} );
 
@@ -327,6 +328,7 @@ describe( 'Title', () => {
 
 			editor.editing.view.document.fire( 'paste', {
 				dataTransfer: dataTransferMock,
+				stopPropagation() {},
 				preventDefault() {}
 			} );
 
