@@ -12,33 +12,33 @@
 #
 msgid ""
 msgstr ""
-"Language-Team: Esperanto (https://www.transifex.com/ckeditor/teams/11143/eo/)\n"
-"Language: eo\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Team: Javanese (https://www.transifex.com/ckeditor/teams/11143/jv/)\n"
+"Language: jv\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgctxt "Dropdown option label for the paragraph format."
 msgid "Paragraph"
-msgstr "Paragrafo"
+msgstr ""
 
 msgctxt "Tooltip for the heading dropdown."
 msgid "Heading"
-msgstr "Ĉapo"
+msgstr ""
 
 msgctxt "Default label for the heading dropdown."
 msgid "Choose heading"
-msgstr "Elektu ĉapon"
+msgstr ""
 
 msgctxt "Dropdown option label for the heading level 1 format."
 msgid "Heading 1"
-msgstr "Ĉapo 1"
+msgstr ""
 
 msgctxt "Dropdown option label for the heading level 2 format."
 msgid "Heading 2"
-msgstr "Ĉapo 2"
+msgstr ""
 
 msgctxt "Dropdown option label for the heading level 3 format."
 msgid "Heading 3"
-msgstr "Ĉapo 3"
+msgstr ""
 
 msgctxt "Dropdown option label for the heading level 4 format."
 msgid "Heading 4"
@@ -54,8 +54,8 @@ msgstr ""
 
 msgctxt "A default value of the placeholder for the content title."
 msgid "Type your title"
-msgstr ""
+msgstr "Serataken irah-irahan"
 
 msgctxt "A default value of the placeholder for the content body."
 msgid "Type or paste your content here."
-msgstr ""
+msgstr "Serataken utawi nyukani babagan ing ngriki"
