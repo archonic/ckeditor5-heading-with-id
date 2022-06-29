@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2022, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
@@ -85,17 +85,16 @@ export default class HeadingCommand extends Command {
           // Write the ID if it doesn't already have one
           // It may already have one if it was previously a header and we're now making it a header again
           if (isHeading && block.getAttribute( 'id' ) == undefined ) {
-            writer.setAttribute( 'id', generateToken(), block);
+            writer.setAttribute( 'id', generateToken(), block );
           }
-				}
-			}
+        }
+      }
 		} );
 	}
 }
 
 function generateToken() {
-  const crypto = require('crypto');
-  return 's' + crypto.randomBytes(3).toString('hex');
+  return 's' + Math.random().toString(16).substring(2, 8);
 }
 
 // Checks whether the given block can be replaced by a specific heading.
