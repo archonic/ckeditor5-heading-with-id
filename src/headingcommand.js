@@ -63,38 +63,38 @@ export default class HeadingCommand extends Command {
 	 * @param {String} options.value Name of the element which this command will apply in the model.
 	 * @fires execute
 	 */
-  execute( options ) {
-    const model = this.editor.model;
-    const document = model.document;
+	execute( options ) {
+		const model = this.editor.model;
+		const document = model.document;
 
-    const modelElement = options.value;
+		const modelElement = options.value;
 
-    const acceptableElements = Array("heading1", "heading2", "heading3", "heading4", "heading5", "heading6");
-    const isHeading = (acceptableElements.indexOf(modelElement) != -1);
+		const acceptableElements = Array("heading1", "heading2", "heading3", "heading4", "heading5", "heading6");
+		const isHeading = (acceptableElements.indexOf(modelElement) != -1);
 
-    model.change(writer => {
-      const blocks = Array.from(document.selection.getSelectedBlocks())
-        .filter(block => {
-          return checkCanBecomeHeading(block, modelElement, model.schema);
-        });
+		model.change(writer => {
+			const blocks = Array.from(document.selection.getSelectedBlocks())
+				.filter(block => {
+					return checkCanBecomeHeading(block, modelElement, model.schema);
+				});
 
-      for (const block of blocks) {
-        if (!block.is('element', modelElement)) {
-          writer.rename(block, modelElement);
+			for (const block of blocks) {
+				if (!block.is('element', modelElement)) {
+					writer.rename(block, modelElement);
 
-          // Write the ID if it doesn't already have one
-          // It may already have one if it was previously a header and we're now making it a header again
-          if (isHeading && block.getAttribute('id') == undefined) {
-            writer.setAttribute('id', generateToken(), block);
-          }
-        }
-      }
-    } );
-  }
+					// Write the ID if it doesn't already have one
+					// It may already have one if it was previously a header and we're now making it a header again
+					if (isHeading && block.getAttribute('id') == undefined) {
+						writer.setAttribute('id', generateToken(), block);
+					}
+				}
+			}
+		});
+	}
 }
 
 function generateToken() {
-  return 's' + Math.random().toString(16).substring(2, 8);
+	return 's' + Math.random().toString(16).substring(2, 8);
 }
 
 // Checks whether the given block can be replaced by a specific heading.

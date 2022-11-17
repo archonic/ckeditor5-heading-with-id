@@ -68,7 +68,7 @@ export default class HeadingEditing extends Plugin {
 				// Schema.
 				editor.model.schema.register( option.model, {
 					inheritAllFrom: '$block',
-          allowAttributes: [ 'id' ]
+					allowAttributes: [ 'id' ]
 				} );
 
 				editor.conversion.elementToElement( option );
@@ -77,7 +77,7 @@ export default class HeadingEditing extends Plugin {
 			}
 		}
 
-    editor.conversion.attributeToAttribute( { model: 'id', view: 'id' } );
+		editor.conversion.attributeToAttribute( { model: 'id', view: 'id' } );
 
 		this._addDefaultH1Conversion( editor );
 
